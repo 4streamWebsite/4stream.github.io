@@ -5,24 +5,24 @@ function validaUser(){
       const pass = document.getElementById("pass");
       if (pass.value == "123"){
         
-        alert("Seja bem Admin:"+" "+nome.value)
-        console.log("cabrao para")
+        alert("Seja bem Admin:"+" "+nome.value);
         
         
         return(action="/back/dist/index.html");
       }
     }
-    alert("Epa Amigo secalhar estas no sitio errado")
+    alert("Epa Amigo secalhar estas no sitio errado");
     location.reload();
     
   }
 (function(){
-
+    //Codigo para abrir e fechar barra lateral
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $(".side-nav").toggleClass("toggled");
     });
     
+    //botão go to top
     const gototop = document.querySelector("#floatBtn");
     gototop.addEventListener("click", ()=>{window.scrollTo({top:0,behavior:"smooth"})});
 
@@ -51,7 +51,8 @@ function validaUser(){
     // store array in local storage
     localStorage.setItem('favorites', JSON.stringify(favorites));
     });
-        
+    
+    //Registo de utilizador e login
     const regForm = document.querySelector("#myMReg");
     const loginForm = document.querySelector("#myMlogin");
     regForm.addEventListener("submit", (event)=>{
@@ -105,7 +106,7 @@ function validaUser(){
             alert("Bem vindo"+" "+foundUser[0].name);       
             }else{
             alert('Username ou Password estão errados.');
-            console.log("Go away hacker!");
+            console.log("Username ou Password estão errados.");
             
         }
         
