@@ -1,0 +1,11 @@
+<h4>Categorias:</h4>
+{{#each filmes}}
+{{categoria}}
+  <div class="card" id=#{{categoria}}>
+    <img class="imgF card-img-top" src={{linkimdb}} alt="Card image cap">    
+    <div class="card-footer">
+      <a href="#" data-toggle="modal" data-target="#myModal{{@index}}"><button
+            class='imgF btn btn-info far fa-caret-square-right'>+Info</button></a>
+    </div>
+  </div>
+{{/each}}

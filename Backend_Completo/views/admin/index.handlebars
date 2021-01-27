@@ -1,0 +1,53 @@
+
+<h1 class="mt-4">Painel Administrador</h1>
+<p class="lead mb-3">Welcome {{user.nome}}</p>
+
+<table class="table table-light">
+  <thead>
+    <h4>Accesso Rapido</h4>
+    <div class="card-deck ml-5" style="align-content:center;">
+  <div class="admin card">
+    <a href="/admin/filmes"><img class="card-img-top" src="https://i.ibb.co/16pVnYK/filmes.png" alt="Card image cap" ></a>
+    <div class="card-footer btn-info">
+      <a href="/admin/filmes"><button class="btn">Lista Filmes</button></a>
+    </div>
+  </div>
+  <div class="admin card">
+    <a href="/admin/users"><img class="card-img-top" src="https://i.ibb.co/M7cqYFy/users.png" alt="Card image cap"></a>
+    
+    <div class="card-footer">
+      <a href="/admin/users"><button class="btn">Users</button></a>
+    </div>
+  </div>
+  <div class="admin card">
+    <a href="/admin/categorias/"><img class="card-img-top" src="https://i.ibb.co/SfRPQwj/categorias.png" alt="Card image cap" >
+    
+    <div class="card-footer btn-info" >
+     <a href="/admin/categorias"><button class="btn">Categorias</button></a>
+    </div>
+  </div>
+  </div>
+  <div class="card-deck ml-5">
+  <div class="admin card" style="align:center">
+    <a href="/admin/filmes/"><img class="card-img-top" src="https://i.ibb.co/vCNLpmV/novo-Filme.png" alt="Card image cap" style="max-width: 18rem;" ></a>
+    <div class="card-footer btn-info">
+      <a href="/filmes/add"><button class="btn">Novo Filme</button></a>
+    </div>
+  </div>
+  <div class="admin card">
+    <a href="/admin/users/"><img class="card-img-top" src="https://i.ibb.co/sb0njnF/novo-Admin.png" alt="Card image cap" style="max-width: 18rem;">
+    
+    <div class="card-footer btn-info">
+      <a href="/admin/users"><button class="btn">Novo Admin</button></a>
+    </div>
+  </div>
+  <div class="admin card">
+    <a href="/admin/categorias"><img class="card-img-top" src="https://i.ibb.co/8ryW7GM/novaCat.png" alt="Card image cap" style="max-width: 18rem;">
+    
+    <div class="card-footer btn-info">
+      <a href="/categorias/add"><button class="btn">Lista Filmes</button></a>
+    </div>
+  </div>
+  </div>
+  
+  <a href="/users/logout" class="btn btn-secondary">Logout</a>

@@ -1,0 +1,107 @@
+<section class="navbar sticky-top navbar-dark bg-dark">
+      <div id="page-content-wrapper">
+        <nav class="navbar sticky-top navbar-dark bg-dark">
+          <!--Codigo de hamburguer e palavra menu-->
+          <div id="menu-toggle">
+            <span class="navbar-toggler-icon"></span>
+            <span class="nav-item">Menu</span>
+          </div>
+          <!--Codigo do logotipo-->
+          <div class="navbar-brand">
+            <div class="container-navbar">
+              <a href="/" ><img
+                  src="https://i.ibb.co/VTsN8Q1/Logo4.png"
+                  style="width: 100px"
+                  alt="4Stream Logo"
+                /></a>
+            </div>
+            <div class="spinner"></div>
+          </div>
+          <!--codigo para butão area privada-->
+          <a href="/admin/" type="button" class="btn btn-secondary fas fa-address-card bg-dark"></a> 
+        </nav>
+      </div>
+    </section>
+    <!--fim de configurações barra menu e logo-->
+    <section class="side">
+      <div class="bg-dark side-nav" id="sidebar-wrapper">
+        <!--login e Registar-->
+        <div class="main-box-sidebar">
+          <div id="sidebar-login">
+            {{#if user}}
+            <div id="sidebar-name">           
+            <h2>olá {{user.nome}}</h2>
+            </div>
+            <div id="sidebar-admin">           
+            <a href="/users/logout" type="button" class="btn btn-warning fas fa-address-card">Logout</a>
+            </div>
+            
+            {{else}}            
+            <a href="/users/login" type="button" class="btn btn-warning fas fa-power-off"> login</a>       
+            
+          </div>
+          <div id="sidebar-Reg">            
+            <a href="/users/registo" type="button" class="btn btn-warning fas fa-power-off"> Registar</a> 
+            {{/if}}
+          </div>
+          <section>
+          <div id="NameUser"></div>          
+          <button id="myprefs" style="display:none;" type="button" class="btn btn-warning fas fa-user-cog" data-toggle="collapse" data-target="#favorites"> as minhas Preferencias</button>
+          <div id="favorites" class="collapse text-white bg-secondary mb-3">
+            <h6>Categorias Preferidas</h6>
+            <ul class="list">
+              <li id="filmesDaSemana">Filmes Actuais</li>
+              <li id="Aventure">Aventura</li>
+              <li id="Sci-fi">Sci-fi</li>
+              <li id="horrorfav">Horror</li>
+              <li id="Premiados">Premiados</li>
+              <li id="indy">Indy</li>
+            </ul>
+          </div>
+          </section>
+        </div>
+        <!--Fim de login e Registar-->
+        <section id="categorias">
+          <!--Menus de sidebar-->
+          <div class="list-group list-group-flush">
+            <a
+              href="/categorias/"
+              class="list-group-item fas fa-atom list-group-item-action bg-dark"
+            >
+              Categorias</a
+            >
+            <a
+              href="/"
+              class="list-group-item list-group-item-action bg-dark fas fa-burn"
+            >
+              Filmes</a
+            >
+            <a
+              href="#aventura"
+              class="list-group-item list-group-item-action bg-dark fas fa-clipboard-check"
+            >
+              Aventura</a
+            >
+            <a
+              href="#scifi"
+              class="list-group-item list-group-item-action bg-dark fas fa-brain"
+            >
+              Sci-Fi</a
+            >
+            <a
+              href="/categorias/#horror"
+              class="list-group-item list-group-item-action bg-dark fas fa-biohazard"
+            >
+              horror</a
+            >
+            <a
+              href="#premiados"
+              class="list-group-item list-group-item-action bg-dark fas fa-disease"
+            >
+              Premiados</a
+            >
+          </div>
+          
+        </section>
+      </div>
+    </section>

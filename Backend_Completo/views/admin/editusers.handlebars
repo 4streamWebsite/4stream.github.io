@@ -1,0 +1,24 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{etext}}</div>
+{{else}}
+    
+{{/each}}
+
+<div class="card md-3">
+    <h4>Editar User</h4>
+    <div class="card-body ">
+    <form action="/admin/users/edit" method="POST">
+        <input type="hidden" name="id" value={{users.id}}>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="nome da categoria" class="form-control" value={{users.nome}}>
+        <br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="username" class="form-control" value={{users.username}}>
+        <br>
+        <label for="eAdmin">Username:</label>
+        <input type="text" id="eAdmin" name="eAdmin" placeholder="Se for admin adicione o Binario 1" class="form-control" value={{users.eAdmin}}>
+        <br>
+        <button type="submit">Editar user</button>
+    </form>
+    </div>
+</div>

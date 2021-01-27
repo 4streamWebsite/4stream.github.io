@@ -1,0 +1,38 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{etext}}</div>
+{{else}}
+    
+{{/each}}
+
+<div class="card md-3">
+    <h4>Novo User</h4>
+    <div class="card-body ">
+    <form action="/admin/user/novo" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Nome do Filme" class="form-control" required>
+        <label for="nomept"></label>
+        <input type="text" id="nomept" name="nomept" placeholder="Nome do Filme em Portugues" class="form-control" required>
+        <label for="duracao">Duração:</label>
+        <input type="text" id="duracao" name="duracao" placeholder="Duração do Filme em Minutos" class="form-control" required>
+        <label for="custoTotal">Custo Total</label>
+         <input type="text" id="custoTotal" name="custoTotal" placeholder="Custo Total do Filme" class="form-control" required>
+        <label for="anoL">Ano Lançamento:</label>
+        <input type="date" id="anoL" name="anoL" placeholder="Ano de Lançamento" class="form-control" required>
+        <label for="linkimdb">Link IMDB:</label>
+        <input type="text" id="linkimdb" name="linkimdb" placeholder="link IMDB" class="form-control" required>
+        <label for="categoria">Categoria:</label>
+        <select name="categoria" class="custom-select">
+            {{#each Categoria}}            
+                <option value="{{nome}}">{{nome}}</option>
+                
+            {{else}}
+                <option value="0">Nenhuma categoria disponivel</option>
+            {{/each}}
+        </select>
+        <input type="hidden" name="categorianome" value={{Categoria.nome}}>
+        <!--<input type="text" name="categoria" class="form-control">-->
+        <br>
+        <button class="btn btn-info mt-4"type="submit">Criar Filme</button>
+    </form>
+    </div>
+</div>

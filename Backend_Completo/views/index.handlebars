@@ -1,0 +1,91 @@
+<div class="jumbotron">
+  <h1 class="display-4">Seja Bem Vindo</h1>
+  <p class="lead">O Maior Site de Stream de Portugal</p>
+  <hr class="my-4">
+  
+</div>
+{{#if user}}
+<p>olá {{user.nome}}</p>
+<h2>Filmes Recentes</h2>
+<div class="card-group">
+{{#each filmes}}
+  <div class="card" id=#{{categoria}}>
+    <img class="card-img-top" src={{linkimdb}} alt="Card image cap">    
+    <div class="card-footer">
+      <a href="#" data-toggle="modal" data-target="#myModal{{@index}}"><button
+            class='imgF btn btn-info far fa-caret-square-right'>+Info</button></a>
+    </div>
+  </div>
+  <div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="container mt-4">
+            <a href="/" ><button class='btn btn-info far fa-caret-square-right'>voltar</button></a>
+            <div class="card-group">
+                <div class="card" id=#{{categoria}}>
+                    <img class="card-img-top" src={{linkimdb}} alt="Card image cap">
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">{{Nome}}</h2>
+                        <p><b>Nome PT:</b> {{NomePT}} </p>
+                        <p><b>Duração:</b> {{DuracaoFilme}}</p>
+                        <h5>Custo Total: {{CustoTotal}}</h5>
+                        <p><b>Ano Lançamento:</b> {{AnoLancamento}}</p>
+                        Link IMDB:{{linkimdb}}
+                    <div class="iframe-container">
+                        <iframe width="560" height="315" "src=https://www.youtube.com/embed/qNscZo38J-s" src=https://www.youtube.com/embed/{{linkyoutube}} frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <button id="myButton">Click me!</button>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{{/each}}
+</div>
+{{else}}
+<h2>Filmes Recentes</h2>
+<div class="card-group">
+{{#each filmes}}
+  <div class="card" id=#{{categoria}}>
+    <img class="card-img-top" src={{linkimdb}} alt="Card image cap">    
+    <div class="card-footer">
+      <a href="#" data-toggle="modal" data-target="#myModal{{@index}}"><button
+            class='imgF btn btn-info far fa-caret-square-right'>+Info</button></a>
+    </div>
+  </div>
+<div class="modal fade centred" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="container mt-4">
+    <a href="/" <button class='btn btn-info far fa-caret-square-right'>voltar</button></a>
+    <div class="card-group">
+      <div class="card">
+        <img class="card-img-top" src={{linkimdb}} alt="Card image cap">
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">{{Nome}}</h2>
+          <p><b>Nome PT:</b> {{NomePT}} </p>
+          <p><b>Duração:</b> {{DuracaoFilme}}</p>
+          <h5>Custo Total: {{CustoTotal}}</h5>
+          <p><b>Ano Lançamento:</b> {{AnoLancamento}}</p>
+          Link IMDB:{{linkimdb}}
+          
+
+        </div>
+        <div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}
+</div>
+{{/if}}
+
+

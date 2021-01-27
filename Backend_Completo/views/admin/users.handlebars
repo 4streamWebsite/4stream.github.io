@@ -1,0 +1,45 @@
+<h2>Users</h2>
+<hr>
+
+
+<table class="table table-light">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">nome</th>
+      <th scope="col">email</th>
+      <th scope="col">Ações</th>
+      <th scope="col">Admin</th>
+    </tr>
+  </thead>
+{{#each users}}    
+  <tbody>
+    <tr>
+      <td>{{id}}</td>
+      <td>{{nome}}</td>
+      <td>{{email}}</td>
+      <td><a href="/admin/users/edit/{{id}}"<button class="btn btn-info">Editar</button></a>
+      <form action="/admin/users/delete/{{_id}}" method="POST">
+        <input type="hidden" name="id" value="{{id}}">
+        <button type="submit" class="btn btn-danger">Apagar</button>
+      </form></td>
+      <td>{{eAdmin}}</td>
+    </tr>    
+  </tbody>
+<!--</table>
+    <div class="UserM card mt-4">
+        <div class=" card-body">
+            <p>Nome:</p><h4>{{nome}}</h4>
+             <a href="/admin/users/edit/{{id}}"<button class="btn btn-info mt-2">Editar</button></a>
+            <form action="/admin/users/delete/{{_id}}" method="POST">
+                <input type="hidden" name="id" value="{{id}}">
+             <button type="submit" class="btn btn-danger">Apagar</button>
+            </form>
+            
+        </div>
+    </div>
+-->        
+{{else}}
+
+<p> Nenhum User Registrado</p>
+{{/each}}

@@ -1,0 +1,242 @@
+/*Efeito de Fundo com degrade*/
+body {
+  font-family: "Lato", sans-serif;
+  /*background: rgb(18,35,46);
+background: linear-gradient(180deg, rgba(18,35,46,1) 0%, rgba(0,124,199,1) 96%, rgba(77,168,218,1) 100%);
+background: rgb(0,124,199);*/
+background: radial-gradient(circle, rgba(0,124,199,0.6643032212885154) 13%, rgba(77,168,218,0.8155637254901961) 29%, rgba(18,35,46,1) 60%);
+
+}
+/*Butão TOP flutuante*/
+#floatBtn{
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  border-radius: 50%;
+
+  font-size:30px;
+  text-decoration: none;
+  position:fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+}
+
+/*Barra top + logo +  botao menu*/
+.nav-item{
+  font-size: 22px;
+  color:#fff;
+  margin-top: auto;
+}
+.nav-item:hover{
+  cursor: context-menu;
+}
+#areaPrivada{
+  text-align: center;
+  color:white;
+  font-family:sans-serif;
+  background-color: none;
+}
+#sidebar-admin{
+  color:white;
+  font-family: sans-serif;
+  background-color: rgb(88, 84, 84);
+}
+/*Logotipo*/
+/*alinha os icons no meio*/
+#page-content-wrapper {
+  min-width: 100vw;
+  min-width: 0;
+    width: 100%;
+}
+/*opcoes do logo + spinner*/
+.navbar-brand{
+  /*position: center;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.container-navbar{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; 
+}
+.spinner {
+  position: absolute;
+  margin: auto;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.1), #000000 90%);
+  transform-origin: 50% 60%;
+  transform: perspective(200px) rotateX(66deg);
+  animation: spinner-wiggle 6s infinite;
+  z-index: 1;
+}
+.spinner:before,
+.spinner:after {
+  content: "";
+  position: absolute;
+  margin: -4px;
+  box-sizing: inherit;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  opacity: .05;
+  border: inherit;
+  border-color: transparent;
+  animation: spinner-spin 4s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, spinner-fade 6s linear infinite;
+  z-index: 1;
+}
+
+.spinner:before {
+  border-top-color: #f0db75;
+}
+
+.spinner:after {
+  border-top-color: #cccccc;
+  animation-delay: 4s;
+}
+
+@keyframes spinner-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner-fade {
+  20% {
+    opacity: .1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: .1;
+  }
+}
+
+
+/*fim*/
+/*Codigo para a barra lateral*/
+
+/*definicoes da barra lateral*/
+.side-nav{
+  position: fixed;
+  min-height: 100vh;
+  left: -350px;
+  -webkit-transition: left .25s ease-out;
+  -moz-transition: left .25s ease-out;
+  -o-transition: left .25s ease-out;
+  transition: left .25s ease-out;
+  width: auto;
+  height: 100vh;
+  z-index: 2;
+}
+/*definicao para esconder a barra*/
+.side-nav.toggled {
+  left: 0px;
+  /*left: -350px;*/
+}
+.list-group-item{
+  color:#ffffff;
+  font-size: 18px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+/*codigo botao login*/
+#sidebar-login{
+  width: 100px;
+  float: left;
+  color: #ffffff;
+  height: auto;
+  font-family: sans-serif;
+  margin-left: 10px;
+}
+/*codigo botao registar*/
+#sidebar-Reg{
+  width: 120px;
+  float: left;
+  color:#ffffff;
+  height: auto;
+  font-family: sans-serif;
+}
+/*Botão de preferencias e favoritos*/
+#myprefs{
+  margin-left: 10px;
+}
+#favorites{
+  align-items: center;
+  align-content: center;
+}
+#NameUser{
+  color: #fff;
+  margin-left: 20px;
+  font-size: 20px;
+  margin-top: auto;
+}
+.h5{
+  margin-left: 10px;
+}
+/*codigo de formatação da lista de menus*/
+#sidebar-wrapper .list-group {
+width: 14rem;
+}
+.imgF{
+  max-width: 18rem;
+}
+.UserM{
+  max-width: 18rem;
+}
+
+.admin{
+  max-width: 18rem;
+  
+}
+/*fim*/
+/*Footer*/
+footer span.copyright{
+  font-family: Arial, Helvetica, sans-serif;
+  color:#fff
+}
+.container{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.d-flex{
+  background-color: thistle;
+}
+/*Favoritos*/
+.list li {
+  cursor: pointer;
+}
+.list li:hover:after,
+.list li.fav:after {
+  content: ' \2605';
+  color: rgb(255, 203, 0);
+}
+.list li.fav:hover:after {
+  content: ' \2606';
+}
+
+/*Iframe Control*/
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
